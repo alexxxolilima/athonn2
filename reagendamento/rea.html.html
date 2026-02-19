@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Reagendamento" />
+  <meta name="author" content="Alex Lima, Gustavo Matos, Bianca Marques" />
+  <title>Reagendamento N2</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/OIP.jpg?v=2" type="image/jpeg">
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-nav">
+      <a class="back-link" href="../index.html">← Painel N2</a>
+      <span class="module-badge">N2 • Reagendamento</span>
+    </div>
+
+    <div class="header">
+      <img src="img/OIP.jpg" alt="Athon" onerror="this.style.display='none'">
+      <h1>Filtro de Reagendamento</h1>
+    </div>
+
+    <div id="loader" class="loader" aria-live="polite" hidden>Processando arquivo...</div>
+    <div id="rowCount" class="row-count" aria-live="polite" hidden></div>
+
+    <div id="dropzone" class="dropzone" role="button" aria-label="Enviar arquivo Excel" tabindex="0">
+      <div class="icon-file">📄</div>
+      <div class="drop-text">Arraste e solte o arquivo Excel aqui ou toque para selecionar</div>
+      <input type="file" id="fileInput" accept=".xlsx,.xls" aria-label="Arquivo Excel" />
+    </div>
+
+    <div class="filters" role="tablist" aria-label="Regiões">
+      <button class="pill-btn active" data-target="SBC" role="tab">SBC</button>
+      <button class="pill-btn" data-target="GRAJAÚ" role="tab">GRAJAÚ</button>
+      <button class="pill-btn" data-target="FRANCO" role="tab">FRANCO</button>
+    </div>
+
+    <div class="actions-bar" id="actionsBar" hidden>
+      <div class="copy-mode" role="toolbar" aria-label="Modo de cópia">
+        <label><input type="radio" name="copyMode" value="nome" checked /> Copiar Nome</label>
+        <label><input type="radio" name="copyMode" value="login" /> Copiar Login</label>
+      </div>
+      <div style="margin-left:auto; display:flex; gap:8px;">
+        <button class="action-btn" id="btnCopyAll">Copiar Tudo</button>
+        <button class="action-btn btn-reset" id="btnReset">Limpar</button>
+      </div>
+    </div>
+
+    <div id="results" class="results-area">
+      <div class="empty-msg">Nenhum arquivo selecionado...</div>
+    </div>
+
+    <div id="osPanel" class="os-panel" hidden aria-live="polite">
+      <div class="os-panel-header">Clientes com O.S. em aberto (por região)</div>
+      <div id="osPanelContent" class="os-panel-content"></div>
+      <div style="margin-top:8px; text-align:right;">
+        <button class="action-btn" id="btnCopyOs">Copiar lista de O.S.</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-legend" aria-hidden="true">
+    <div class="legend-row">
+      <div class="box-legend" style="background: #fff;"></div>
+      <span>Reagendamento / Ausente</span>
+    </div>
+    <div class="legend-row">
+      <div class="box-legend" style="background: var(--warning); box-shadow: var(--glow-warn);"></div>
+      <span>Endereço não localizado</span>
+    </div>
+  </div>
+
+  <script src="log.js" defer></script>
+</body>
+</html>
