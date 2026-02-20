@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -6,46 +6,55 @@
   <meta name="description" content="Painel principal N2" />
   <meta name="author" content="Alex Lima, Gustavo Matos, Bianca Marques" />
   <title>Athon Telecom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="athon/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="shortcut icon" href="img/OIP.jpg" type="image/png" />
+  <style>
+    body { font-family: 'Sora', sans-serif; }
+  </style>
 </head>
-<body>
-  <main class="container" role="main">
-    <header class="hero" role="banner">
-      <div class="brand">
-        <img src="img/OIP.jpg" alt="Athon Telecom" class="company-logo" onerror="this.src='https://via.placeholder.com/64x64?text=AT'" />
-        <div>
-          <p class="eyebrow">Athon Telecom</p>
-          <h1>Painel N2</h1>
-          <p id="current-date" class="subtitle">Central de atendimento técnico</p>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_15%_-10%,rgba(34,211,238,.2),transparent_40%),radial-gradient(circle_at_85%_-20%,rgba(249,115,22,.2),transparent_35%),linear-gradient(to_bottom,#020617,#020617,#0f172a)]"></div>
+
+  <main class="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center gap-8 px-4 py-10" role="main">
+    <header class="hero rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-black/40" role="banner">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div class="brand flex items-center gap-4">
+          <img src="img/OIP.jpg" alt="Athon Telecom" class="company-logo h-16 w-16 rounded-2xl border border-white/20 object-cover" onerror="this.src='https://via.placeholder.com/64x64?text=AT'" />
+          <div>
+            <p class="eyebrow text-xs uppercase tracking-[0.18em] text-cyan-300">Athon Telecom</p>
+            <h1 class="text-2xl font-black md:text-3xl">Painel Operacional N2</h1>
+            <p id="current-date" class="subtitle mt-1 text-sm text-slate-300">Central de atendimento técnico</p>
+          </div>
         </div>
+        <span class="n2-badge inline-flex items-center rounded-full border border-cyan-300/40 bg-cyan-400/15 px-4 py-2 text-sm font-bold tracking-wide text-cyan-100">N2</span>
       </div>
-      <span class="n2-badge">N2</span>
     </header>
 
-    <section class="modules-wrap" aria-label="Módulos principais">
-      <a class="module-card" href="loclazacao_os/loc.html.html" title="Abrir Localização O.S.">
-        <div class="module-tag">Módulo</div>
-        <h2 class="module-title">Localização O.S.</h2>
-        <p class="module-text">Visualize, filtre e envie confirmações de rota e endereço para as ordens de serviço.</p>
-        <span class="module-action">Acessar Localização</span>
+    <section class="modules-wrap grid gap-4 md:grid-cols-2" aria-label="Módulos principais">
+      <a class="module-card rounded-2xl border border-white/10 bg-slate-900/65 p-6 shadow-xl shadow-black/30 transition hover:-translate-y-1 hover:border-cyan-300/40" href="loclazacao_os/loc.html.html" title="Abrir Localização O.S.">
+        <div class="module-tag text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">Módulo</div>
+        <h2 class="module-title mt-2 text-2xl font-black">Localização O.S.</h2>
+        <p class="module-text mt-3 text-sm text-slate-300">Visualize, filtre e envie confirmações de rota e endereço para as ordens de serviço.</p>
+        <span class="module-action mt-6 inline-flex rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-100">Acessar Localização</span>
       </a>
 
-      <a class="module-card" href="reagendamento/rea.html.html" title="Abrir Reagendamento">
-        <div class="module-tag">Módulo</div>
-        <h2 class="module-title">Reagendamento</h2>
-        <p class="module-text">Organize clientes ausentes e reagendamentos por região</p>
-        <span class="module-action">Acessar Reagendamento</span>
+      <a class="module-card rounded-2xl border border-white/10 bg-slate-900/65 p-6 shadow-xl shadow-black/30 transition hover:-translate-y-1 hover:border-amber-300/40" href="reagendamento/rea.html.html" title="Abrir Reagendamento">
+        <div class="module-tag text-xs font-bold uppercase tracking-[0.16em] text-amber-300">Módulo</div>
+        <h2 class="module-title mt-2 text-2xl font-black">Reagendamento</h2>
+        <p class="module-text mt-3 text-sm text-slate-300">Organize clientes ausentes e reagendamentos por região com cópia rápida.</p>
+        <span class="module-action mt-6 inline-flex rounded-xl border border-amber-400/40 bg-amber-500/10 px-4 py-2 text-sm font-bold text-amber-100">Acessar Reagendamento</span>
       </a>
     </section>
-</main>
+  </main>
 
   <script src="athon/los.js" defer></script>
 </body>
 </html>
+
+
 
 
 
